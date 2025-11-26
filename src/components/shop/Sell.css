@@ -1,0 +1,14 @@
+
+.chosen_item_right_box {
+    width: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.chosen_item_left_box {
+    width: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}

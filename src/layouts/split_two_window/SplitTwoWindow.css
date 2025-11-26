@@ -1,0 +1,125 @@
+:root {
+    --choosing-status-height-large: 40vh;
+    --choosing-status-height-small: 30vh;
+    --status-des-title-height: 20%;
+    --status-des-body-height: 60%;
+}
+
+.choose_item {
+    height: 100%; 
+    margin-top: 3%; 
+    margin-bottom: 3%;
+}
+
+.inherit_height {
+    height: inherit;
+}
+
+.choosing_item_box {
+    margin-top: 3%;
+    text-align: center; 
+    align-items: center;
+    overflow-y: auto;
+    border-style: double; 
+    border-color: whitesmoke;
+    font-size: 20px;
+}
+
+.chosen_item {
+    display: flex;
+    align-items: center;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-radius: 5px;
+    background-color: darkorange;
+    color: black;
+    padding: 1%;
+    margin-bottom: 5%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.chosen_item:hover {
+    background-color: gold;
+    color: black;
+}
+
+.left_align {
+    width: 50%;
+    text-align: left;
+}
+
+.right_align {
+    width: 50%;
+    text-align: right;
+}
+
+.item_des_box {
+    color: whitesmoke;
+    margin-top: 3%;
+    overflow-y: auto;
+    border-style: double; 
+    border-color: whitesmoke;
+}
+
+.item_des_box_txt {
+    padding: 3%;
+    height: 100%;
+}
+
+.item_des_title {
+    height: var(--status-des-title-height);
+    overflow-x: auto;
+}
+
+.item_des_body {
+    height: var(--status-des-body-height);
+    word-wrap: break-word;
+    text-align: left;
+    overflow-y: auto;
+}
+
+.item_des_btn {
+    height: calc(100% - var(--status-des-title-height) - var(--status-des-body-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-radius: 5px;
+    color: whitesmoke;
+    padding: 1%;
+    margin-bottom: 5%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.item:hover{
+    background-color: whitesmoke;
+    color: black;
+}
+
+@media only screen and (max-width: 600px) {
+    .item_des_box {
+        height: var(--choosing-status-height-small);
+    }
+
+    .choosing_item_box {
+        min-height: var(--choosing-status-height-small);
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .item_des_box {
+        height: var(--choosing-status-height-large);
+    }
+
+    .choosing_item_box {
+        min-height: var(--choosing-status-height-large);
+    }
+}

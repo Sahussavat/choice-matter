@@ -1,0 +1,23 @@
+
+.status_des_box {
+    font-family: MM_KANUN;
+}
+
+.header_box {
+    background-color: black;
+}
+
+.footer_box {
+    background-color: black;
+}
+
+.status_des_title {
+    font-size: 30px;
+    color: whitesmoke;
+}
+
+.status_des_body {
+    font-size: 20px;
+    background-color: black;
+    color: whitesmoke;
+}

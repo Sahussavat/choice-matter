@@ -1,0 +1,29 @@
+
+.finished_box {
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: MM_KANUN; 
+}
+
+.finished_txt {
+    height: 95%;
+    width: 95%;
+    text-align: center;
+    color: orange;
+    overflow-y: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .finished_txt {
+        font-size: 10vw;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .finished_txt {
+        font-size: 7vw;
+    }
+}

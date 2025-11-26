@@ -1,0 +1,83 @@
+
+.screen_box {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
+.tab_bar_box {
+    width: 100vw; 
+    height: 70px; 
+    background-color: black; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-family: MM_KANUN;
+}
+
+.tab_bar {
+    overflow-x: hidden; 
+    display: flex; 
+    justify-content: center;
+    width: 70%; 
+    display: flex;
+}
+
+.tab_btn {
+    margin-left: 10%; 
+    margin-right: 10%;
+}
+
+.choosing_box {
+    margin: 2%;
+    border-style: double; 
+    border-color: black; 
+    background-color: black;
+    height: 73vh;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.choose_btn_box {
+    display: flex; 
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    font-family: MM_KANUN;
+}
+
+.choose_btn {
+    display: flex; 
+    justify-content: center; 
+}
+
+.left_align {
+    width: 50%;
+    text-align: left;
+}
+
+.right_align {
+    width: 50%;
+    text-align: right;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.display_none {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .choose_btn {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .choose_btn {
+        width: 50%;
+    }
+}

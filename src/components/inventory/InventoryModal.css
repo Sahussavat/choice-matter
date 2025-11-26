@@ -1,0 +1,35 @@
+
+:root {
+    --footer-right-width: 10%;
+}
+
+.menu_body {
+    height: 550px;
+}
+
+.modal_box {
+    font-family: MM_KANUN;
+}
+
+.btn_menu {
+    font-size: larger;
+    font-family: MM_KANUN;
+}
+
+.footer_left {
+    width: calc(100% - var(--footer-right-width));
+    height: 100%;
+}
+
+.footer_right {
+    width: var(--footer-right-width);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_box {
+    display: flex;
+    width: 100%;
+}

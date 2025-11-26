@@ -1,0 +1,95 @@
+
+:root {
+    --save-timestamp-box-width: 50%
+}
+
+.menu_body {
+    height: 450px;
+}
+
+.modal_box {
+    font-family: MM_KANUN;
+}
+
+.modal_btn_box {
+    display: flex; 
+    width: 100%;
+}
+
+.modal_btn_box_left {
+    width: 50%;
+}
+
+.modal_btn_box_right {
+    width: 50%; 
+    text-align: right;
+}
+
+.btn_menu {
+    font-size: larger;
+    font-family: MM_KANUN;
+}
+
+.saves_list_box {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: black white;
+    border-style: double;
+    border-color: whitesmoke;
+    border-radius: 5px;
+}
+
+.saves_list {
+    height: fit-content;
+    width: 97%;
+}
+
+.save_box {
+    height: 120px;
+    width: 100%;
+    border-style: double;
+    border-color: whitesmoke;
+    border-radius: 5px;
+    color: whitesmoke;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    cursor: pointer;
+    display: flex;
+    transition: 0.2s;
+}
+
+.save_box:hover{
+    background-color: whitesmoke;
+    color: black;
+}
+
+.save_name_box {
+    width: calc(100% - var(--save-timestamp-box-width));
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.save_timestamp_box {
+    width: var(--save-timestamp-box-width);
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.save_text {
+    margin-left: 3%;
+    margin-right: 3%;
+    overflow-x: hidden;
+}
+
+.prevent_select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}

@@ -1,0 +1,15 @@
+
+.input_error_txt {
+    color: red;
+    min-height: 50px;
+}
+
+.max_save_name_len {
+    min-width: 100px;
+    display: flex; 
+    justify-content: center
+}
+
+.hide {
+    visibility: hidden;
+}

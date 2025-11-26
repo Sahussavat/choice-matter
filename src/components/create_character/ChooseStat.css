@@ -1,0 +1,29 @@
+
+
+.choose_stat_box {
+    height: fit-content;
+    font-family: MM_KANUN; 
+    display: block;
+    text-align: center; 
+    align-items: center;
+}
+
+.remain_point {
+    padding: 3%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    color: whitesmoke;
+}
+
+@media only screen and (max-width: 600px) {
+    .choose_stat_box {
+        width: 100%; 
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .choose_stat_box {
+        width: 80%; 
+    }
+}

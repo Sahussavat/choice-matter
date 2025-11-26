@@ -1,0 +1,53 @@
+
+.status_box {
+    text-align: center;
+    align-items: center;
+    font-family: MM_KANUN;
+    width: 100%;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    display: block;
+}
+
+.status_body {
+    height: 100px;
+}
+
+.border_box {
+    border-color: whitesmoke;
+    border-style: double;
+    color: whitesmoke;
+}
+
+.stat_box {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    word-wrap: break-word;
+    padding: 1%;
+    text-align: left;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .status_title {
+        font-size: 25px;
+    }
+
+    .status_body {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .status_title {
+        font-size: 30px;
+    }
+
+    .status_body {
+        font-size: 25px;
+    }
+}

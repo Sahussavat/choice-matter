@@ -1,0 +1,11 @@
+
+.modal_btn_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_box {
+    margin-left: 1%;
+    margin-right: 1%;
+}
