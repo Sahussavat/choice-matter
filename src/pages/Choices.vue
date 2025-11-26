@@ -40,8 +40,7 @@ export default {
                 event_name = save.current_event_name
             }
         } else {
-            window.location.hash = Define.get_create_char_path()
-            window.location.reload()
+            window.location.href = Define.get_create_char_path()
         }
         let provider = {}
         provider[Constants.VALUES_CONTEXT] = v
