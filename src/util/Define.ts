@@ -14,6 +14,6 @@ export class Define {
         return new CookieSaveNLoad
     }
 
-    static get_shop_path() : string{ return `/#/${RouteName.SHOP}`}
-    static get_create_char_path() : string{ return `/#/${RouteName.CREATE_CHAR}`}
+    static get_shop_path() : string{ return window.location.origin+`/choice-matter/#/${RouteName.SHOP}`}
+    static get_create_char_path() : string{ return window.location.origin+`/choice-matter/#/${RouteName.CREATE_CHAR}`}
 }
