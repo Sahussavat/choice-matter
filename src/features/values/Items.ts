@@ -19,7 +19,7 @@ export class Items {
     deodorant : ItemLayout = {
         show_name : "ยาดับกลิ่น",
         des: "สามารถใช้เพื่อลบกลิ่นตัวเป็นจำนวนชั่วระยะเวลาหนึ่ง ผลเอฟเฟคจะหายไปเมื่อป้องกันเหตุการณ์สุ่มจากมอนสเตอร์สำเร็จ",
-        val: 5,
+        val: 0,
         sell_price: Constants.DEODORANT_PRICE,
         type: ItemType.POTION,
         onclick: (values : Values)=>{
@@ -32,7 +32,7 @@ export class Items {
     hp_potion : ItemLayout = {
         show_name : "ยาฟื้นฟู",
         des: "สามารถใช้เพื่อรักษาบาดแผลได้ "+Constants.HP_POTION_UNIT+" หน่วย",
-        val: 5,
+        val: 3,
         sell_price: Constants.HP_POTION_PRICE,
         type: ItemType.POTION,
         onclick: (values : Values)=>{
@@ -41,6 +41,13 @@ export class Items {
              0, values.get_variables().max_hp.val) 
             values.signal_update()
         }
+    }
+
+    crow_mask : ItemLayout = {
+        show_name : "หน้ากากหมออีกา",
+        des: "หน้ากากที่ถูกออกแบบมาพิเศษเพื่อป้องกันการติดเชื้อ (สวมใส่อยู่)",
+        val: 0,
+        type: ItemType.QUEST,
     }
 
     goblin_bone : ItemLayout = {
