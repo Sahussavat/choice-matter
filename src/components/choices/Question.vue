@@ -133,8 +133,7 @@ export default {
                 values: values.get_all_pure_value(),
             })
             if(path_data.define_path){
-                window.location.hash = path_data.define_path
-                window.location.reload()
+                window.location.href = path_data.define_path
                 return
             } 
             window.location.hash = path
