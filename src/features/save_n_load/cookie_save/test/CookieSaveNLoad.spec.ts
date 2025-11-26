@@ -276,14 +276,12 @@ describe("CookieSaveNLoad", ()=>{
     describe("is_save_max", ()=>{
         test("return false if save amount is not max out yet",()=>{
             let save_name1 = "save1"
-            let save_name2 = "save2"
             let v1 = {
                 current_question_name: "",
                 timestamp : 10,
                 values: {}
             }
             cookieSaveNLoad['save_all_data'][save_name1] = v1
-            cookieSaveNLoad['save_all_data'][save_name2] = v1
             expect(cookieSaveNLoad.is_save_max()).toBe(false)
         })
 

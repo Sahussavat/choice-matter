@@ -47,7 +47,7 @@ export function get_choice_to_shop_window(values: Values, question_define : Ques
                 paths:[
                     new Path({
                         path: question_define.get_key(question_define.all_questions.wizard_shop_done_shopping),
-                        define_path: Define.SHOP_PATH
+                        define_path: Define.get_shop_path()
                         +`?${Constants.SHOP_NAME_CONTEXT}=${
                             shop_define.get_key(shop_define.wizard_shop)
                         }`,

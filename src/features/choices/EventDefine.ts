@@ -25,3 +25,7 @@ export class EventDefine {
         return res_event
     }
 }
+
+export function get_event_define(){
+    return new EventDefine
+}

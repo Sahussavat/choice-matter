@@ -14,6 +14,6 @@ export class Define {
         return new CookieSaveNLoad
     }
 
-    static readonly SHOP_PATH = window.location.origin+`/#/${RouteName.SHOP}`
-    static readonly CREATE_CHAR_PATH = window.location.origin+`/#/${RouteName.CREATE_CHAR}`
+    static get_shop_path() : string{ return window.location.origin+`/#/${RouteName.SHOP}`}
+    static get_create_char_path() : string{ return window.location.origin+`/#/${RouteName.CREATE_CHAR}`}
 }

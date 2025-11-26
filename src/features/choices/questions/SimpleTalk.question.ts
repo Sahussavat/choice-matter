@@ -31,7 +31,7 @@ export function create_end_simple_choice(choice_txt : string) : Choice {
         paths: [
             new Path({
                 path: RouteName.HOMEPAGE,
-                define_path: Define.CREATE_CHAR_PATH,
+                define_path: Define.get_create_char_path(),
                 conditions: [],
             })
         ],
