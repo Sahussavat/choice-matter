@@ -7,7 +7,7 @@ import { get_fight_wolf_text, get_meet_wolf_text } from "./WolfText"
 import { REPLACABLE_DEFAULT_PATH } from "../RandomEvent"
 import { AllEvents } from "../AllEvents"
 import { EventDefine } from "../EventDefine"
-import { get_dice_result, roll_dice } from "../questions/RollDice"
+import { get_dice_result, get_elite_sneak_roll_point, roll_dice } from "../questions/RollDice"
 import { Condition } from "../Condition"
 import { get_choice_fight_wolf } from "./WolfFight.event"
 
@@ -20,9 +20,6 @@ function get_meet_wolf_event(){
                 observ_show_questions: [()=>{
                     values.get_variables().got_wolf_item.val = false
                     values.get_variables().escape_wolf_fail.val = false
-                    if(values.get_variables().wolf_cooldown.val < values.get_variables().wolf_cooldown_max.val){
-                        values.get_variables().wolf_cooldown.val += 1
-                    }
                 }],
             })
     
@@ -75,7 +72,7 @@ function get_meet_wolf_event(){
                                     default_path_chance: 0
                                 },
                                 conditions: [[
-                                    new Condition(()=>{return get_dice_result(values) * 100 >= 50})
+                                    new Condition(()=>{return get_dice_result(values) * 100 + get_elite_sneak_roll_point(values) >= 50})
                                 ]]
                             }),
                             new Path({
@@ -88,7 +85,7 @@ function get_meet_wolf_event(){
                                     default_path_chance: 0
                                 },
                                 conditions: [[
-                                    new Condition(()=>{return get_dice_result(values) * 100 < 50})
+                                    new Condition(()=>{return get_dice_result(values) * 100 + get_elite_sneak_roll_point(values) < 50})
                                 ]]
                             }),
                         ]

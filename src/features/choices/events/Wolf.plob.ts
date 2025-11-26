@@ -2,13 +2,15 @@ import { Values } from "@/features/values/Values";
 import { EventDefine } from "../EventDefine";
 
 export function get_wolf_plob_random(values : Values){
-    if(values.get_variables().wolf_cooldown.val >= values.get_variables().wolf_cooldown_max.val
+    if(values.get_variables().wolf_cooldown.val < values.get_variables().wolf_cooldown_max.val
         || values.get_variables().not_smell.val){
-        values.get_variables().wolf_cooldown.val = 0
+        values.get_variables().wolf_cooldown.val += 1
         if(values.get_variables().not_smell.val){
             values.get_variables().not_smell.val = false
         }
         return
+    } else {
+        values.get_variables().wolf_cooldown.val = 0
     }
     let event_define : EventDefine = new EventDefine
     return {

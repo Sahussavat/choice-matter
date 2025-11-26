@@ -7,7 +7,7 @@ import { REPLACABLE_DEFAULT_PATH } from "../RandomEvent"
 import { create_end_simple_choice } from "../questions/SimpleTalk.question"
 import { EventDefine } from "../EventDefine"
 import { Condition } from "../Condition"
-import { get_random_damge, is_player_dead } from "../questions/FightRoll"
+import { do_damage_to_player, get_random_damge, is_player_dead } from "../questions/FightRoll"
 import { clamp } from "@/util/MathUtill"
 import { Constants } from "@/util/Constants"
 
@@ -20,8 +20,7 @@ export function get_choice_fight_wolf(values : Values, event_define : EventDefin
             })
         ]],
         observ_click_choice: [()=>{
-            values.get_variables().hp.val 
-            = clamp(values.get_variables().hp.val - get_random_damge(Constants.WOLF__DAMAGE, values), 0, values.get_variables().max_hp.val);
+            do_damage_to_player(Constants.WOLF__DAMAGE, values);
         }],
         paths:[
             new Path({

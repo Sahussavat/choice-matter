@@ -5,9 +5,9 @@ import { AllQuestions } from "../AllQuestions"
 import { QuestionDefine } from "../QuestionDefine"
 import { Choice } from "../Choice"
 import { Path } from "../Path"
-import { get_random_damge, is_player_dead } from "./FightRoll"
+import { do_damage_to_player, get_random_damge, is_player_dead } from "./FightRoll"
 import { Condition } from "../Condition"
-import { get_dice_result, roll_dice } from "./RollDice"
+import { get_dice_result, get_knowledge_roll_point, roll_dice } from "./RollDice"
 import { AllEvents } from "../AllEvents"
 import { EventDefine } from "../EventDefine"
 import { get_wolf_plob_random } from "../events/Wolf.plob"
@@ -19,8 +19,7 @@ export function get_choice_fight_goblin(values: Values, question_define : Questi
             choice_context: "[ สู้ ]",
             conditions: [],
             observ_click_choice: [()=>{
-                values.get_variables().hp.val 
-                = clamp(values.get_variables().hp.val - get_random_damge(Constants.GOBLIN_DAMAGE, values), 0,values.get_variables().max_hp.val);
+                do_damage_to_player(Constants.GOBLIN_DAMAGE, values);
                 values.get_variables().goblin_killed.val = true
             }],
             paths:[
@@ -53,13 +52,15 @@ export function get_choice_decision_to_goblin_camp(values: Values, question_defi
                     new Path({
                         path: question_define.get_key(question_define.all_questions.goblin_trap_success),
                         conditions: [[
-                            new Condition(()=>{return get_dice_result(values) * 100 >= 50})
+                            new Condition(
+                                ()=>{return get_dice_result(values) * 100 + get_knowledge_roll_point(values) >= 50})
                         ]]
                     }),
                     new Path({
                         path: question_define.get_key(question_define.all_questions.goblin_trap_fail),
                         conditions: [[
-                            new Condition(()=>{return get_dice_result(values) * 100 < 50})
+                            new Condition(
+                                ()=>{return get_dice_result(values) * 100 + get_knowledge_roll_point(values) < 50})
                         ]]
                     }),
                 ]

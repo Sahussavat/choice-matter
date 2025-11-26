@@ -250,7 +250,7 @@ export class Variables {
 
     wolf_cooldown : NumberVariable = {
         show_name : "",
-        val: 0,
+        val: 1,
         des: "",
         type: VarType.REGULAR
     }
@@ -262,17 +262,24 @@ export class Variables {
         type: VarType.REGULAR
     }
 
-    quick_hand : VariableLayout = {
-        show_name : "มือไว",
+    knowledge_stat : VariableLayout = {
+        show_name : "ช่างสังเกตและรอบรู้",
         val: 0,
-        des: "มือไวขโมยของไว",
+        des: "คุณคือนักผจญภัยที่ทั้งรอบรู้และเป็นคนช่างสังเกต การสุ่มเพื่อตรวจสอบสิ่งของจะการันตีผ่านทันที",
         type: VarType.STAT
     }
 
-    eagle_eye : VariableLayout = {
-        show_name : "ตาเหยี่ยว",
+    elite_sneak_stat : VariableLayout = {
+        show_name : "ราวกับล่องหน",
         val: 0,
-        des: "มองเห็นได้ละเอียด",
+        des: "ย่องเบาราวกับลม พลางตัวราวกับผี คุณคือนักผจญภัยผู้เชี่ยวชาญด้านการซ่อน การสุ่มเพื่อหลบซ่อนจะมีโอกาสสำเร็จมากขึ้นเป็นอย่างมาก",
+        type: VarType.STAT
+    }
+
+    fighter_stat : VariableLayout = {
+        show_name : "นักรบผ่านศึก",
+        val: 0,
+        des: "ร้อยสมรภูมิที่คุณผ่านมา ไม่ว่าจะในสนามรบหรือตรอกสลัมก็ตาม คุณนั้นเชี่ยวชาญด้านการต่อสู้เป็นอย่างมาก การสุ่มเพื่อการต่อสู้จะมีโอกาสสำเร็จมากขึ้นเป็นอย่างมาก",
         type: VarType.STAT
     }
 

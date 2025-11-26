@@ -10,7 +10,7 @@ import { create_simple_choice, get_simple_talk_question } from "./SimpleTalk.que
 import { get_choice_fight_mimic, get_choice_stealth_kill_mimic } from "./MimicFight.question";
 import { get_choice_to_thief_camp } from "./ThiefCamp.question";
 import { get_all_choice_to_elf_room } from "./Elf.question";
-import { get_dice_result, roll_dice } from "./RollDice";
+import { get_dice_result, get_knowledge_roll_point, roll_dice } from "./RollDice";
 import { get_all_choices_to_library } from "./Library.question";
 import { get_all_choices_to_mystery_front_room } from "./MysteryRoom.question";
 import { get_choice_to_inside_mystery_room } from "./MysteryRoomUnlock.question";
@@ -35,7 +35,7 @@ function get_choice_check_mimic_alone(values : Values, question_define : Questio
                 path: question_define.get_key(question_define.all_questions.mimic_identify_succ),
                 conditions: [[
                     new Condition(()=>{
-                        return get_dice_result(values) * 100 > 50
+                        return get_dice_result(values) * 100 + get_knowledge_roll_point(values) > 50
                     })
                 ]],
             }),
@@ -43,7 +43,7 @@ function get_choice_check_mimic_alone(values : Values, question_define : Questio
                 path: question_define.get_key(question_define.all_questions.mimic_identify_fail),
                 conditions: [[
                     new Condition(()=>{
-                        return get_dice_result(values) * 100 <= 50
+                        return get_dice_result(values) * 100 + get_knowledge_roll_point(values) <= 50
                     })
                 ]],
             }),

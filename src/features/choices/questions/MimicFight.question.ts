@@ -8,18 +8,16 @@ import { Question } from "../Question"
 import { AllQuestions } from "../AllQuestions"
 import { gain_health_potion_mimic } from "./Mimic.question"
 import { create_end_simple_choice, get_simple_talk_question } from "./SimpleTalk.question"
-import { get_random_damge, is_player_dead } from "./FightRoll"
+import { do_damage_to_player, get_random_damge, is_player_dead } from "./FightRoll"
 import { get_mimic_default_choice } from "./MimicTrap.question"
 import { Constants } from "@/util/Constants"
-import { clamp } from "@/util/MathUtill"
 
 export function get_choice_fight_mimic(values : Values, question_define : QuestionDefine){
     return new Choice({
         choice_context: `[ สู้ ]`,
         conditions: [],
         observ_click_choice: [()=>{
-            values.get_variables().hp.val 
-            = clamp(values.get_variables().hp.val - get_random_damge(Constants.MIMIC_DAMAGE, values), 0,values.get_variables().max_hp.val);
+            do_damage_to_player(Constants.MIMIC_DAMAGE, values);
         }],
         paths: [
             new Path({

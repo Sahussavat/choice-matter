@@ -6,18 +6,16 @@ import { Choice } from "../Choice"
 import { get_choice_fight_wolf } from "./WolfFight.event"
 import { AllEvents } from "../AllEvents"
 import { EventDefine } from "../EventDefine"
-import { get_random_damge, is_player_dead } from "../questions/FightRoll"
+import { do_damage_to_player, get_random_damge, is_player_dead } from "../questions/FightRoll"
 import { create_end_simple_choice } from "../questions/SimpleTalk.question"
 import { Constants } from "@/util/Constants"
-import { clamp } from "@/util/MathUtill"
 
 function get_escape_wolf_fail_event(){
     let wolf_class = class Apple extends BuildEventObj {
         build_question(values: Values): Question {
             if(!values.get_variables().escape_wolf_fail.val){
                 values.get_variables().escape_wolf_fail.val = true
-                values.get_variables().hp.val 
-                = clamp(values.get_variables().hp.val - get_random_damge(Constants.WOLF_FOUND__DAMAGE, values), 0, values.get_variables().max_hp.val);
+                do_damage_to_player(Constants.WOLF_FOUND__DAMAGE, values);
             }
             let question = new Question({
                 question_txt: get_escape_wolf_fail_text(values),

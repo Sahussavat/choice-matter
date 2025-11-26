@@ -7,7 +7,7 @@ import { Choice } from "../Choice"
 import { Path } from "../Path"
 import { Condition } from "../Condition"
 import { get_choice_to_enter_ancient } from "./EnterAncient.question"
-import { get_random_damge } from "./FightRoll"
+import { do_damage_to_player, get_random_damge } from "./FightRoll"
 import { get_choice_to_goblin_camp } from "./GoblinCamp.question"
 import { get_all_choice_to_elf_room } from "./Elf.question"
 import { get_all_choices_to_mimic_room } from "./MimicPathToRoom"
@@ -86,8 +86,7 @@ export function get_choice_decision_to_thief_camp(values: Values, question_defin
                 choice_context: "[ สู้ ]",
                 conditions: [],
                 observ_click_choice: [()=>{
-                    values.get_variables().hp.val 
-                    = clamp(values.get_variables().hp.val - get_random_damge(Constants.THIEF_DAMAGE, values), 0,values.get_variables().max_hp.val);
+                    do_damage_to_player(Constants.THIEF_DAMAGE, values);
                     values.get_variables().thief_camp_killed.val = true
                 }],
                 paths:[
