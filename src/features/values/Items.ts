@@ -46,7 +46,7 @@ export class Items {
     crow_mask : ItemLayout = {
         show_name : "หน้ากากหมออีกา",
         des: "หน้ากากที่ถูกออกแบบมาพิเศษเพื่อป้องกันการติดเชื้อ (สวมใส่อยู่)",
-        val: 0,
+        val: 1,
         type: ItemType.QUEST,
     }
 
